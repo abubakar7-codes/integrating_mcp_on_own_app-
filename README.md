@@ -1,11 +1,23 @@
-# Personal Finance Tracker - Frontend
+# Personal Finance Tracker with MCP Integration
 
-A modern Next.js frontend for the Personal Finance Tracker API.
+A comprehensive personal finance management application with FastAPI backend, Next.js frontend, and Model Context Protocol (MCP) integration for AI-powered financial insights.
+
+## 🎥 Demo Video
+
+Watch our demo video to see the application in action:
+
+📹 **[View Demo Video](./demo/)** - See the full application walkthrough
+
+*Note: Demo video will be available once added to the `demo/` folder*
 
 ## Features
 
+### 🚀 Core Features
 - **Modern UI**: Built with Next.js 14, TypeScript, and Tailwind CSS
-- **Authentication**: Secure login and registration
+- **FastAPI Backend**: High-performance Python API with SQLAlchemy ORM
+- **MCP Integration**: AI-powered financial insights using Model Context Protocol
+- **LiteQuery Database**: Enhanced querying capabilities for financial data
+- **Authentication**: Secure login and registration system
 - **Dashboard**: Overview of financial data with charts and statistics
 - **Transaction Management**: Add, edit, and delete income/expenses
 - **Budget Tracking**: Monitor spending against budgets
@@ -13,8 +25,15 @@ A modern Next.js frontend for the Personal Finance Tracker API.
 - **Reports**: Generate spending reports and analytics
 - **Responsive Design**: Works on desktop, tablet, and mobile
 
+### 🤖 AI-Powered Features
+- **Smart Categorization**: Automatic transaction categorization
+- **Financial Insights**: AI-generated spending analysis
+- **Budget Recommendations**: Intelligent budget suggestions
+- **Goal Optimization**: AI-assisted financial goal planning
+
 ## Tech Stack
 
+### Frontend
 - **Next.js 14** - React framework with App Router
 - **TypeScript** - Type safety and better development experience
 - **Tailwind CSS** - Utility-first CSS framework
@@ -22,6 +41,18 @@ A modern Next.js frontend for the Personal Finance Tracker API.
 - **Recharts** - Data visualization library
 - **Lucide React** - Beautiful icons
 - **Headless UI** - Accessible UI components
+
+### Backend
+- **FastAPI** - Modern, fast web framework for building APIs
+- **SQLAlchemy** - Python SQL toolkit and Object-Relational Mapping
+- **SQLite/PostgreSQL** - Database support
+- **Pydantic** - Data validation using Python type annotations
+- **Uvicorn** - ASGI server implementation
+
+### AI Integration
+- **Model Context Protocol (MCP)** - AI integration framework
+- **LiteQuery** - Enhanced database querying
+- **FastMCP** - MCP server implementation
 
 ## Getting Started
 
@@ -152,6 +183,21 @@ The app can be deployed to any platform that supports Next.js:
 - AWS Amplify
 - Railway
 - DigitalOcean App Platform
+
+## 📹 Adding Demo Videos
+
+To add demo videos to this repository:
+
+1. **Record your demo** using screen recording software (OBS Studio, Loom, etc.)
+2. **Save the video** as MP4 format (recommended) or WebM
+3. **Add to demo folder**: Place your video file in the `demo/` directory
+4. **Update documentation**: Follow the instructions in `demo/README.md`
+5. **Commit and push**: Add the video to your repository
+
+### Demo Video Suggestions
+- **Main Demo** (2-3 min): Application overview, adding transactions, creating budgets
+- **Technical Demo** (3-5 min): API endpoints, MCP integration, database operations
+- **Quick Start** (1-2 min): Installation and basic usage
 
 ## Contributing
 
