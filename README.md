@@ -6,9 +6,9 @@ A comprehensive personal finance management application with FastAPI backend, Ne
 
 Watch our demo video to see the application in action:
 
-📹 **[View Demo Video](./demo/)** - See the full application walkthrough
+https://github.com/abubakar7-codes/integrating_mcp_on_own_app-/blob/master/demo/demo.mp4
 
-*Note: Demo video will be available once added to the `demo/` folder*
+*Note: Add your demo video file as `demo.mp4` in the `demo/` folder to display it here*
 
 ## Features
 
@@ -189,10 +189,9 @@ The app can be deployed to any platform that supports Next.js:
 To add demo videos to this repository:
 
 1. **Record your demo** using screen recording software (OBS Studio, Loom, etc.)
-2. **Save the video** as MP4 format (recommended) or WebM
-3. **Add to demo folder**: Place your video file in the `demo/` directory
-4. **Update documentation**: Follow the instructions in `demo/README.md`
-5. **Commit and push**: Add the video to your repository
+2. **Save the video** as `demo.mp4` in the `demo/` directory
+3. **Commit and push**: Add the video to your repository
+4. **GitHub will automatically display** the video inline in the repository
 
 ### Demo Video Suggestions
 - **Main Demo** (2-3 min): Application overview, adding transactions, creating budgets
