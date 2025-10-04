@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "finance-tracker": {
+      "command": "python",
+      "args": [
+        "D:/make_ownapp_and_mcp/start_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:/make_ownapp_and_mcp"
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "mcpServers": {
+    "finance-tracker": {
+      "command": "python",
+      "args": [
+        "D:/make_ownapp_and_mcp/start_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:/make_ownapp_and_mcp",
+        "DATABASE_URL": "sqlite:///./finance_tracker_litequery.db"
+      },
+      "description": "Finance Tracker MCP Server with 8 financial management tools",
+      "version": "2.0.0",
+      "capabilities": {
+        "tools": true,
+        "resources": false,
+        "prompts": false
+      },
+      "tools": [
+        {
+          "name": "add_transaction",
+          "description": "Add a new financial transaction (income or expense)",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "number",
+                "description": "Transaction amount"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of the transaction"
+              },
+              "transaction_type": {
+                "type": "string",
+                "enum": ["income", "expense"],
+                "description": "Type of transaction"
+              },
+              "category": {
+                "type": "string",
+                "description": "Transaction category (e.g., food, salary, rent)"
+              },
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              }
+            },
+            "required": ["amount", "description", "transaction_type", "category"]
+          }
+        },
+        {
+          "name": "get_transactions",
+          "description": "Retrieve financial transactions with optional filtering",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              },
+              "limit": {
+                "type": "integer",
+                "default": 50,
+                "description": "Maximum number of transactions to return"
+              },
+              "transaction_type": {
+                "type": "string",
+                "enum": ["income", "expense"],
+                "description": "Filter by transaction type"
+              },
+              "category": {
+                "type": "string",
+                "description": "Filter by category"
+              },
+              "start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date filter (YYYY-MM-DD format)"
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date filter (YYYY-MM-DD format)"
+              }
+            }
+          }
+        },
+        {
+          "name": "get_financial_summary",
+          "description": "Get a comprehensive financial summary including income, expenses, and net worth",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              },
+              "start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date for analysis (YYYY-MM-DD format)"
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date for analysis (YYYY-MM-DD format)"
+              }
+            }
+          }
+        },
+        {
+          "name": "create_budget",
+          "description": "Create a new budget for a specific category and time period",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Budget name"
+              },
+              "category": {
+                "type": "string",
+                "description": "Category to budget for"
+              },
+              "amount": {
+                "type": "number",
+                "description": "Budget amount"
+              },
+              "period": {
+                "type": "string",
+                "enum": ["monthly", "weekly", "yearly"],
+                "description": "Budget period"
+              },
+              "start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Budget start date (YYYY-MM-DD format)"
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Budget end date (YYYY-MM-DD format)"
+              },
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              }
+            },
+            "required": ["name", "category", "amount", "period", "start_date", "end_date"]
+          }
+        },
+        {
+          "name": "get_budget_status",
+          "description": "Get current status of all budgets including spending vs. budget amounts",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              }
+            }
+          }
+        },
+        {
+          "name": "create_financial_goal",
+          "description": "Create a new financial goal",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "description": "Goal title"
+              },
+              "description": {
+                "type": "string",
+                "description": "Goal description"
+              },
+              "target_amount": {
+                "type": "number",
+                "description": "Target amount to save"
+              },
+              "target_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Target completion date (YYYY-MM-DD format)"
+              },
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              }
+            },
+            "required": ["title", "description", "target_amount", "target_date"]
+          }
+        },
+        {
+          "name": "get_financial_goals",
+          "description": "Get all financial goals for a user",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              }
+            }
+          }
+        },
+        {
+          "name": "analyze_spending_patterns",
+          "description": "Analyze spending patterns over a specified period",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "user_id": {
+                "type": "integer",
+                "default": 1,
+                "description": "User ID (defaults to 1 for demo)"
+              },
+              "days": {
+                "type": "integer",
+                "default": 30,
+                "description": "Number of days to analyze (defaults to 30)"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

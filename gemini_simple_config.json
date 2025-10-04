@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "finance-tracker": {
+      "command": "python",
+      "args": [
+        "D:/make_ownapp_and_mcp/start_mcp_for_gemini.py"
+      ],
+      "env": {
+        "PYTHONPATH": "D:/make_ownapp_and_mcp",
+        "DATABASE_URL": "sqlite:///./finance_tracker_litequery.db"
+      }
+    }
+  }
+}
