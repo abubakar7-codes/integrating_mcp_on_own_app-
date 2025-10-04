@@ -6,7 +6,7 @@ A comprehensive personal finance management application with FastAPI backend, Ne
 
 Watch our demo video to see the application in action:
 
-https://github.com/abubakar7-codes/integrating_mcp_on_own_app-/blob/master/demo/Recording%202025-10-04%20120438.mp4
+https://github.com/abubakar7-codes/integrating_mcp_on_own_app-/blob/master/demo/record.mp4
 
 ## Features
 
